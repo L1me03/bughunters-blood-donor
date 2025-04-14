@@ -1,0 +1,90 @@
+# Build directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Mono auto-generated files
+mono_crash.*
+
+# Visual Studio files
+.vs/
+*.vc.db
+*.VC.db
+*.ncb
+*.cache
+*.log
+
+# Rider files
+.idea/
+
+# macOS files
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+
+# MAUI-specific
+*.FileContentIndex
+*.db-shm
+*.db-wal
+*.apk
+*.aab
+
+# Android build outputs
+*.apk
+*.ap_
+*.dex
+*.class
+*.jar
+*.keystore
+*.so
+*.hprof
+
+# iOS build outputs
+*.app/
+*.dSYM/
+*.ipa
+*.xcuserstate
+
+# Others
+*.pdb
+*.mdb
+*.tmp
+*.bak
+*.swp
+*.orig
+*.rej
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.vsp
+*.nupkg
+*.snupkg
+*.lock.json
+
+# Node or JS (if used)
+node_modules/
+npm-debug.log
+
+# NuGet
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Xamarin specific (if present)
+*.xarchive
+*.xapp
+*.xcuserstate
+*.xcodeproj/
+
+# OneDrive / Sync issues
+~$*
+*.tmp
+*.tmp.*
