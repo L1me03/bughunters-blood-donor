@@ -1,10 +1,9 @@
-﻿namespace BloodDonor
+﻿namespace BloodDonor;
+
+public partial class AppShell : Shell
 {
-    public partial class AppShell : Shell
+    public AppShell()
     {
-        public AppShell()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
