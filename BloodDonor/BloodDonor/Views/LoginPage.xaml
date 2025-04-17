@@ -11,7 +11,7 @@
         <Entry Placeholder="Email" Keyboard="Email" />
         <Entry Placeholder="Password" IsPassword="True" />
 
-        <Button Text="Login" BackgroundColor="#B71C1C" TextColor="White" />
+        <Button Text="Loginn" BackgroundColor="#B71C1C" TextColor="White" />
 
         <Label Text="Don't have an account?" HorizontalOptions="Center" />
         <Button Text="Register" BackgroundColor="Transparent" TextColor="#B71C1C" />
