@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls;
+﻿using BloodDonor.Views;
 
 namespace BloodDonor;
 
@@ -8,10 +7,8 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
-    }
 
-    protected override Window CreateWindow(IActivationState activationState)
-    {
-        return new Window(new AppShell());
+        // Shell kao glavni layout koji koristi rute za navigaciju
+        MainPage = new AppShell();
     }
 }

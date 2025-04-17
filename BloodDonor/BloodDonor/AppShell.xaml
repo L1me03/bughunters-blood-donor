@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="BloodDonor.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:BloodDonor.Views">
+    xmlns:views="clr-namespace:BloodDonor.Views"
+    x:Class="BloodDonor.AppShell"
+    Shell.FlyoutBehavior="Disabled"
+    BackgroundColor="White">
 
+    <!-- Welcome Page as initial screen -->
     <ShellContent
-        Title="Welcome"
-        ContentTemplate="{DataTemplate views:WelcomePage}"
-        Route="WelcomePage" />
+        Route="WelcomePage"
+        ContentTemplate="{DataTemplate views:WelcomePage}" />
 
+    <!-- Login Page -->
     <ShellContent
-        Title="Login"
-        ContentTemplate="{DataTemplate views:LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage"
+        ContentTemplate="{DataTemplate views:LoginPage}" />
+
+    <!-- Register Page -->
+    <ShellContent
+        Route="RegisterPage"
+        ContentTemplate="{DataTemplate views:RegisterPage}" />
+
 </Shell>

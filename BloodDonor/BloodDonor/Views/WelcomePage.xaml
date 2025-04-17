@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="BloodDonor.Views.WelcomePage"
-    BackgroundColor="#B71C1C">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BloodDonor.Views.WelcomePage"
+             BackgroundColor="White">
 
-    <Grid>
-        <Image Source="bughunterslogo.png" HeightRequest="150" VerticalOptions="Center" HorizontalOptions="Center" />
-        <Label Text="Welcome to BloodDonor" 
-               FontSize="24"
-               TextColor="White"
-               VerticalOptions="End"
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <Image Source="bughunterslogo.png" WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" />
+
+        <Label Text="Welcome to Blood Donor App"
+               FontSize="28"
+               FontAttributes="Bold"
                HorizontalOptions="Center"
-               Margin="0,0,0,40"/>
-    </Grid>
+               TextColor="#e53935" />
+
+        <Label Text="Join the community and start saving lives today!"
+               FontSize="16"
+               TextColor="Gray"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20" />
+
+        <Button Text="Get Started"
+                Clicked="OnGetStartedClicked"
+                BackgroundColor="#e53935"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50" />
+    </VerticalStackLayout>
 </ContentPage>
