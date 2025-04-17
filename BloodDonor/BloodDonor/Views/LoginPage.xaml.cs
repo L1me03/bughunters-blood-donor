@@ -17,8 +17,14 @@ public partial class LoginPage : ContentPage
         RegisterLabel.GestureRecognizers.Add(tapGesture);
     }
 
+
     private async void OnLoginClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Login", "Login logic goes here", "OK");
+        // Skip authentication logic and go directly to MainMenuPage
+        await Shell.Current.GoToAsync(nameof(MainMenuPage));
+    }
+    private async void OnRegisterLabelTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(RegisterPage));
     }
 }
