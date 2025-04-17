@@ -1,4 +1,5 @@
-﻿using BloodDonor.Views;
+﻿using Microsoft.Maui.Controls;
+using BloodDonor.Views;
 
 namespace BloodDonor;
 
@@ -8,9 +9,9 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
 
-        // Register routes for navigation
-        Routing.RegisterRoute("WelcomePage", typeof(WelcomePage));
-        Routing.RegisterRoute("LoginPage", typeof(LoginPage));
-        Routing.RegisterRoute("RegisterPage", typeof(RegisterPage));
+        Routing.RegisterRoute(nameof(WelcomePage), typeof(WelcomePage));
+        Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+        Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
+        Routing.RegisterRoute(nameof(MainMenuPage), typeof(MainMenuPage));
     }
 }
