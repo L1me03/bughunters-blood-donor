@@ -31,13 +31,13 @@
             </Frame>
 
             <Frame CornerRadius="12" Padding="10" BackgroundColor="#f5f5f5">
-                <Entry Placeholder="Email"
+                <Entry x:Name="emailEntry" Placeholder="Email"
                        BackgroundColor="Transparent"
                        TextColor="Black" />
             </Frame>
 
             <Frame CornerRadius="12" Padding="10" BackgroundColor="#f5f5f5">
-                <Entry Placeholder="Password"
+                <Entry x:Name="passwordEntry" Placeholder="Password"
                        IsPassword="True"
                        BackgroundColor="Transparent"
                        TextColor="Black" />

@@ -17,14 +17,26 @@ public partial class LoginPage : ContentPage
         RegisterLabel.GestureRecognizers.Add(tapGesture);
     }
 
-
     private async void OnLoginClicked(object sender, EventArgs e)
     {
-        // Skip authentication logic and go directly to MainMenuPage
-        await Shell.Current.GoToAsync(nameof(MainMenuPage));
+        var authService = new FirebaseAuthService();
+
+        try
+        {
+            var token = await authService.Login(emailEntry.Text, passwordEntry.Text);
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                // Login uspešan — idi na glavni meni (npr. MainPage ili Shell route)
+                await Shell.Current.GoToAsync("//MainPage");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Login greška", ex.Message, "OK");
+        }
     }
-    private async void OnRegisterLabelTapped(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync(nameof(RegisterPage));
-    }
+
 }
+
+

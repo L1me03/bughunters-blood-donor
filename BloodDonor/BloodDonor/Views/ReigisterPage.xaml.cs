@@ -19,6 +19,20 @@ public partial class RegisterPage : ContentPage
 
     private async void OnRegisterClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Register", "Registration logic goes here", "OK");
+        var authService = new FirebaseAuthService();
+
+        try
+        {
+            var token = await authService.Register(emailEntry.Text, passwordEntry.Text);
+            await DisplayAlert("Uspješno", "Registracija je uspješna", "OK");
+            await Shell.Current.GoToAsync("//LoginPage");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Greška pri registraciji", ex.Message, "OK");
+        }
     }
+
 }
+
+
