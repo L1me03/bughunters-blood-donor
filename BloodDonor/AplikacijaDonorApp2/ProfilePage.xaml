@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplikacijaDonorApp2.Views.ProfilePage"
+             BackgroundColor="#FCA7A7"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <!-- Ikonica i naslov -->
+            <StackLayout HorizontalOptions="Center">
+                <Image Source="drop_character.png" HeightRequest="80"/>
+                <Label Text="My profile" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!-- Sekcija: Osobni podaci -->
+            <Frame BackgroundColor="White" CornerRadius="20" Padding="15" HasShadow="True">
+                <StackLayout Spacing="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="👤" FontSize="18"/>
+                        <Label Text="Name: Mihajlo" FontSize="18"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="📅" FontSize="18"/>
+                        <Label Text="Date of birth: 12.12.1912" FontSize="18"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="🩸" FontSize="18"/>
+                        <Label Text="Gender: Male" FontSize="18"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="📞" FontSize="18"/>
+                        <Label Text="Phone: +38766123321" FontSize="18"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="📧" FontSize="18"/>
+                        <Label Text="E-mail: mm@gmail.com" FontSize="18"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Sekcija: Donor status -->
+            <Label Text="Donor status :" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+            <StackLayout Spacing="10">
+                <Button Text="Blood type: A+" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
+                <Button Text="Total donation: 25" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
+                <Button Text="Next donation: 20.05.2025" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
+                <Button Text="Certificates/ Badges" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

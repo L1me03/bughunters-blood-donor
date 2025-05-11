@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplikacijaDonorApp2.Views.MapPage"
+             BackgroundColor="#FCA7A7"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Home ikonica i naslov -->
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+              
+                <Label Text="MAP" FontSize="32" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <!-- Opis -->
+            <Label Text="Here you can find or search for the nearest blood donation location."
+                   FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
+            <Label Text="Locations of the nearest donation centers"
+                   FontSize="14" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
+            <!-- Search bar -->
+            <Frame BackgroundColor="White" CornerRadius="25" Padding="10" HasShadow="True">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Search by location.." PlaceholderColor="Gray"
+                           BackgroundColor="Transparent" />
+                    <Image Source="drop_character.png" HeightRequest="50" WidthRequest="50"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Mapa (placeholder slika) -->
+            <Image Source="mapa.png" Aspect="AspectFill" HeightRequest="400"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplikacijaDonorApp2.Views.HistoryPage"
+             BackgroundColor="#FCA7A7"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <!-- Naslov i Home emoji -->
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                
+                <Label Text="HISTORY" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <!-- Opšti status -->
+            <Frame BackgroundColor="White" CornerRadius="20" Padding="15" HasShadow="True">
+                <StackLayout Spacing="10">
+                    <Label Text="🩸 Total donation:" FontSize="16"/>
+                    <Label Text="📅 Last donation:" FontSize="16"/>
+                    <Label Text="⏰ Next donation date:" FontSize="16"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Zabeležena donacija 1 -->
+            <Frame BackgroundColor="White" CornerRadius="20" Padding="15" HasShadow="True">
+                <StackLayout Spacing="10">
+                    <Label Text="📅 Date of donation:" FontSize="16"/>
+                    <Label Text="📍 Location:" FontSize="16"/>
+                    <Label Text="🩸 Form of blood donation:" FontSize="16"/>
+                    <Label Text="☑️ Donation status:" FontSize="16"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Zabeležena donacija 2 -->
+            <Frame BackgroundColor="White" CornerRadius="20" Padding="15" HasShadow="True">
+                <StackLayout Spacing="10">
+                    <Label Text="📅 Date of donation:" FontSize="16"/>
+                    <Label Text="📍 Location:" FontSize="16"/>
+                    <Label Text="🩸 Form of blood donation:" FontSize="16"/>
+                    <Label Text="☑️ Donation status:" FontSize="16"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Footer -->
+            <Label Text="BugHunters ©" FontSize="12" HorizontalOptions="Center" TextColor="Black"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

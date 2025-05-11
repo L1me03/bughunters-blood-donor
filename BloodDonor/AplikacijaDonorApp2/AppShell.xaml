@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AplikacijaDonorApp2.Views"
+    x:Class="AplikacijaDonorApp2.AppShell"
+    FlyoutBehavior="Flyout"
+    Shell.FlyoutBackgroundColor="DarkRed">
+
+    <Shell.FlyoutHeader>
+        <Grid Padding="10" HeightRequest="120">
+            <Label Text="#USER#" TextColor="White" FontSize="20" VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+
+
+    <!-- Dodate eksplicitne rute za svaku stranicu -->
+    <FlyoutItem Title="🏠 Home" Route="HomePage">
+        <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="👤 Profile" Route="ProfilePage">
+        <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="🗺️ Maps" Route="MapPage">
+        <ShellContent ContentTemplate="{DataTemplate views:MapPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="📅 History" Route="HistoryPage">
+        <ShellContent ContentTemplate="{DataTemplate views:HistoryPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="🩸 Donate" Route="DonatePage">
+        <ShellContent ContentTemplate="{DataTemplate views:DonatePage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Log out" IconImageSource="logout_icon.png" Clicked="OnLogoutClicked"/>
+</Shell>

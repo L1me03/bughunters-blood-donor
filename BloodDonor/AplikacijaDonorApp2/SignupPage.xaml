@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplikacijaDonorApp2.Views.SignupPage"
+             BackgroundColor="#FCA7A7"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <StackLayout x:Name="SignupStack" Padding="30" Spacing="15">
+            <Image Source="drop_character.png" HeightRequest="100" HorizontalOptions="Center"/>
+            <Entry Placeholder="Name" BackgroundColor="White"/>
+            <Entry Placeholder="Lastname" BackgroundColor="White"/>
+            <Entry Placeholder="E-mail" BackgroundColor="White"/>
+            <Entry Placeholder="Password" IsPassword="True" BackgroundColor="White"/>
+            <Entry Placeholder="Country" BackgroundColor="White"/>
+            <Entry Placeholder="City" BackgroundColor="White"/>
+            <Entry Placeholder="Blood Group" BackgroundColor="White"/>
+            <Button Text="SIGN UP" BackgroundColor="#B22222" TextColor="White" CornerRadius="25" Clicked="OnSignUpClicked"/>
+            <Label x:Name="SignInLabel"
+                   Text="Already have an account? Sign in"
+                   HorizontalOptions="Center"
+                   FontSize="12"
+                   TextDecorations="Underline"
+                   TextColor="Blue" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
