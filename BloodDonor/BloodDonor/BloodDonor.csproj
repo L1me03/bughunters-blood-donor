@@ -48,6 +48,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\RegisterPage.xaml.cs">
+	    <DependentUpon>RegisterPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 		<MauiXaml Update="AppShell.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -57,7 +63,7 @@
 		<MauiXaml Update="Views\MainMenuPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-		<MauiXaml Update="Views\ReigisterPage.xaml">
+		<MauiXaml Update="Views\RegisterPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Views\WelcomePage.xaml">
