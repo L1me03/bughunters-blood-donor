@@ -17,14 +17,10 @@ public partial class LoginPage : ContentPage
         RegisterLabel.GestureRecognizers.Add(tapGesture);
     }
 
+private async void OnLoginClicked(object sender, EventArgs e)
+    {
+        // Bez Firebase, samo idi dalje
+        await Shell.Current.GoToAsync("//MainMenuPage");
+    }
 
-    private async void OnLoginClicked(object sender, EventArgs e)
-    {
-        // Skip authentication logic and go directly to MainMenuPage
-        await Shell.Current.GoToAsync(nameof(MainMenuPage));
-    }
-    private async void OnRegisterLabelTapped(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync(nameof(RegisterPage));
-    }
 }

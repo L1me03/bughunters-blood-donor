@@ -1,4 +1,4 @@
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
 
 namespace BloodDonor.Views;
 
@@ -19,6 +19,7 @@ public partial class RegisterPage : ContentPage
 
     private async void OnRegisterClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Register", "Registration logic goes here", "OK");
+        // Samo vraća korisnika nazad na login bez autentikacije
+        await Shell.Current.GoToAsync("//LoginPage");
     }
 }
