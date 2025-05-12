@@ -19,7 +19,7 @@
                 <StackLayout Spacing="10">
                     <StackLayout Orientation="Horizontal">
                         <Label Text="👤" FontSize="18"/>
-                        <Label Text="Name: Mihajlo" FontSize="18"/>
+                        <Label Text="Name: Marko Markovic" FontSize="18"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="📅" FontSize="18"/>

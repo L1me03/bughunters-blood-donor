@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AplikacijaDonorApp2.Views.SignupPage"
@@ -6,23 +5,99 @@
              NavigationPage.HasNavigationBar="False">
 
     <ScrollView>
-        <StackLayout x:Name="SignupStack" Padding="30" Spacing="15">
-            <Image Source="drop_character.png" HeightRequest="100" HorizontalOptions="Center"/>
-            <Entry Placeholder="Name" BackgroundColor="White"/>
-            <Entry Placeholder="Lastname" BackgroundColor="White"/>
-            <Entry Placeholder="E-mail" BackgroundColor="White"/>
-            <Entry Placeholder="Password" IsPassword="True" BackgroundColor="White"/>
-            <Entry Placeholder="Country" BackgroundColor="White"/>
-            <Entry Placeholder="City" BackgroundColor="White"/>
-            <Entry Placeholder="Blood Group" BackgroundColor="White"/>
-            <Button Text="SIGN UP" BackgroundColor="#B22222" TextColor="White" CornerRadius="25" Clicked="OnSignUpClicked"/>
+        <StackLayout x:Name="MainStack"
+                     Padding="30"
+                     Spacing="15"
+                     VerticalOptions="Center">
+
+            <!-- Logo -->
+            <Image Source="drop_character.png"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+            <!-- NAME -->
+            <Label Text="Name:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="firstNameEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- LASTNAME -->
+            <Label Text="Lastname:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="lastNameEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- EMAIL -->
+            <Label Text="E-mail:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="emailEntry" BackgroundColor="Transparent" Keyboard="Email" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- PASSWORD -->
+            <Label Text="Password:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="passwordEntry" IsPassword="True" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- CITY -->
+            <Label Text="City:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="cityEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- BLOOD GROUP -->
+            <Label Text="Blood Group:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="bloodGroupEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- COUNTRY -->
+            <Label Text="Country:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="countryEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- SIGN UP BUTTON -->
+            <Button Text="SIGN UP"
+                    BackgroundColor="#B22222"
+                    TextColor="White"
+                    CornerRadius="25"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="45"
+                    Clicked="OnSignUpClicked"/>
+
+            <!-- LINK to Login -->
             <Label x:Name="SignInLabel"
                    Text="Already have an account? Sign in"
                    HorizontalOptions="Center"
                    FontSize="12"
+                   TextColor="DarkBlue"
                    TextDecorations="Underline"
-                   TextColor="Blue" />
-
+                   Margin="0,5,0,10"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -6,7 +6,7 @@
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout Padding="20">
-        <Label Text="HI $USER$"
+        <Label Text="HI Marko Markovic"
                FontSize="20"
                FontAttributes="Bold"
                TextColor="Black"/>
@@ -25,14 +25,18 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Row="0" Grid.Column="0" Stroke="Red" Background="Red" Padding="10">
-                <Label Text="MY BLOOD TYPE" TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="A+" TextColor="White" HorizontalOptions="Center"/>
             </Border>
             <Border Grid.Row="0" Grid.Column="1" Stroke="Red" Background="Red" Padding="10">
-                <Label Text="20\nTOTAL DONATIONS" TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="TOTAL DONATIONS: 25" TextColor="White" HorizontalOptions="Center"/>
             </Border>
             <Border Grid.Row="1" Grid.Column="0" Stroke="Red" Background="Red" Padding="10">
-                <Label Text="DONOR CARD" TextColor="White" HorizontalOptions="Center"/>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnDonorCardTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="MARKO MARKOVIC" TextColor="White" HorizontalOptions="Center"/>
             </Border>
+
             <Border Grid.Row="1" Grid.Column="1" Stroke="Red" Background="Red" Padding="10">
                 <Label Text="YOU CAN'T DONATE YET." TextColor="White" HorizontalOptions="Center"/>
             </Border>
