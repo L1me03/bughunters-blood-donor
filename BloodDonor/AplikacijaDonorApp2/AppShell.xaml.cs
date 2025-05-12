@@ -1,4 +1,6 @@
-﻿namespace AplikacijaDonorApp2
+﻿using AplikacijaDonorApp2.Views;
+
+namespace AplikacijaDonorApp2
 {
     public partial class AppShell : Shell
     {
@@ -12,10 +14,9 @@
             var window = Application.Current?.Windows.FirstOrDefault();
             if (window is not null)
             {
-                window.Page = new NavigationPage(new Views.LoginPage());
+                window.Page = new LogoutPage(); // poziva LogoutPage umesto Shell navigacije
             }
         }
-
     }
 }
 

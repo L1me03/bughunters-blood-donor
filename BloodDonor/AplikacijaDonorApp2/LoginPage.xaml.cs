@@ -1,4 +1,4 @@
-namespace AplikacijaDonorApp2.Views;
+﻿namespace AplikacijaDonorApp2.Views;
 
 public partial class LoginPage : ContentPage
 {
@@ -28,7 +28,7 @@ public partial class LoginPage : ContentPage
         var window = Application.Current?.Windows.FirstOrDefault();
         if (window is not null)
         {
-            window.Page = new AppShell();
+            window.Page = new AppShell(); // ✅ vraćeno: prikazuje Flyout meni i HomePage
         }
     }
 }

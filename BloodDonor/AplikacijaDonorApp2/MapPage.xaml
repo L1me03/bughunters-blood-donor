@@ -8,20 +8,18 @@
     <ScrollView>
         <StackLayout Padding="20" Spacing="15">
 
-            <!-- Home ikonica i naslov -->
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
               
                 <Label Text="MAP" FontSize="32" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
 
-            <!-- Opis -->
+         
             <Label Text="Here you can find or search for the nearest blood donation location."
                    FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
 
             <Label Text="Locations of the nearest donation centers"
                    FontSize="14" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
 
-            <!-- Search bar -->
             <Frame BackgroundColor="White" CornerRadius="25" Padding="10" HasShadow="True">
                 <StackLayout Orientation="Horizontal">
                     <Entry Placeholder="Search by location.." PlaceholderColor="Gray"
@@ -30,8 +28,10 @@
                 </StackLayout>
             </Frame>
 
-            <!-- Mapa (placeholder slika) -->
-            <Image Source="mapa.png" Aspect="AspectFill" HeightRequest="400"/>
+            <Image Source="map.jpeg"
+               Aspect="AspectFill"
+               HeightRequest="350"
+               HorizontalOptions="Fill" />
 
         </StackLayout>
     </ScrollView>

@@ -24,7 +24,7 @@ public partial class SignupPage : ContentPage
         var window = Application.Current?.Windows.FirstOrDefault();
         if (window is not null)
         {
-            window.Page = new AppShell();
+            window.Page = new AppShell(); 
         }
     }
 }
