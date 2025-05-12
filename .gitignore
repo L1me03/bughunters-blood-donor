@@ -89,4 +89,4 @@ artifacts/
 *.tmp
 *.tmp.*
 
-*.zip
+*.zip"*.zip" 
