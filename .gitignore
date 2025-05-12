@@ -1,4 +1,4 @@
-# Build directories
+wwwwwwwwwwwwwwwwwwwwwwww# Build directories
 bin/
 obj/
 
@@ -88,3 +88,5 @@ artifacts/
 ~$*
 *.tmp
 *.tmp.*
+
+*.zip
