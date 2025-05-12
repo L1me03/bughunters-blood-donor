@@ -8,7 +8,7 @@
     <ScrollView>
         <StackLayout Padding="25" Spacing="20">
             <!-- Naslovna poruka -->
-            <Label Text="Hi, Dear User!"
+            <Label Text="Hi, Dear Marko!"
                    FontSize="24"
                    FontAttributes="Bold"
                    TextColor="Black"/>
@@ -42,7 +42,7 @@
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnDonorCardTapped"/>
                     </Frame.GestureRecognizers>
-                    <Label Text="MARKO MARKOVIC" TextColor="White" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="DONATOR CARD" TextColor="White" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>
 
                 <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="DarkRed" CornerRadius="15" HasShadow="True" Padding="10">

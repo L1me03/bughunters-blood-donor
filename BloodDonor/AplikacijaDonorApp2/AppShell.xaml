@@ -13,9 +13,7 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-
-
-    <!-- Dodate eksplicitne rute za svaku stranicu -->
+    <!-- Glavne stranice -->
     <FlyoutItem Title="🏠 Home" Route="HomePage">
         <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
     </FlyoutItem>
