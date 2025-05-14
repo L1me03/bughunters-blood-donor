@@ -19,13 +19,14 @@ namespace AplikacijaDonorApp2.Models
         [Required]
         [EmailAddress]
         public string? Email { get; set; }
+        public string? Phone { get; set; }
 
         [Required]
         [MinLength(4)]
         public string? Password { get; set; }
 
         [MaxLength(50)]
-        public string? Country { get; set; }
+        public string? Location { get; set; }
 
         [MaxLength(5)]
         public string? BloodGroup { get; set; }
@@ -35,5 +36,9 @@ namespace AplikacijaDonorApp2.Models
         [Required]
         [MaxLength(20)]
         public string? DonorCardId { get; set; } // npr. "DN-****"
+        public string? Gender { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+
+        public int TotalDonations { get; set; } = 0;
     }
 }

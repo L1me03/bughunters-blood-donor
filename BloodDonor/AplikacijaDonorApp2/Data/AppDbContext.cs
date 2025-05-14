@@ -14,7 +14,16 @@ namespace AplikacijaDonorApp2.Data
         {
             var folder = FileSystem.AppDataDirectory;
             _dbPath = Path.Combine(folder, "donors.db");
-            Database.EnsureCreated(); // automatski kreira bazu ako ne postoji
+
+            // Kod za brisanje prethodne baze
+            /*
+            if (File.Exists(_dbPath))
+            {
+                File.Delete(_dbPath);
+            }
+            */
+
+            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

@@ -1,6 +1,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AplikacijaDonorApp2.Views.SignupPage"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              BackgroundColor="#FCA7A7"
              NavigationPage.HasNavigationBar="False">
 
@@ -44,6 +45,17 @@
                 <Entry x:Name="emailEntry" BackgroundColor="Transparent" Keyboard="Email" HeightRequest="45" FontSize="13"/>
             </Border>
 
+            <!-- PHONE -->
+            <Label Text="Phone:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="phoneEntry" Placeholder="e.g. +38761111222"
+           BackgroundColor="Transparent" Keyboard="Telephone" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+
             <!-- PASSWORD -->
             <Label Text="Password:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
             <Border StrokeThickness="0" Background="White" Padding="0">
@@ -53,14 +65,42 @@
                 <Entry x:Name="passwordEntry" IsPassword="True" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
             </Border>
 
-            <!-- CITY -->
-            <Label Text="City:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+
+            <!-- LOCATION -->
+            <Label Text="Location:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
             <Border StrokeThickness="0" Background="White" Padding="0">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10"/>
                 </Border.StrokeShape>
-                <Entry x:Name="cityEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+                <Entry x:Name="locationEntry"
+           Placeholder="Format: Country, City (e.g. Bosnia, Sarajevo)"
+           BackgroundColor="Transparent"
+           HeightRequest="45"
+           FontSize="13"/>
             </Border>
+
+            <!-- GENDER -->
+            <Label Text="Gender:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Entry x:Name="genderEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
+            </Border>
+
+            <!-- DATE OF BIRTH -->
+            <Label Text="Date of Birth:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
+            <Border StrokeThickness="0" Background="White" Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <DatePicker x:Name="dobPicker"
+                Format="dd/MM/yyyy"
+                MaximumDate="{x:Static sys:DateTime.Today}"
+                HeightRequest="45"
+                Margin="0,0,0,10"/>
+            </Border>
+
 
             <!-- BLOOD GROUP -->
             <Label Text="Blood Group:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
@@ -69,15 +109,6 @@
                     <RoundRectangle CornerRadius="10"/>
                 </Border.StrokeShape>
                 <Entry x:Name="bloodGroupEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
-            </Border>
-
-            <!-- COUNTRY -->
-            <Label Text="Country:" FontSize="14" TextColor="Black" HorizontalOptions="Center"/>
-            <Border StrokeThickness="0" Background="White" Padding="0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="10"/>
-                </Border.StrokeShape>
-                <Entry x:Name="countryEntry" BackgroundColor="Transparent" HeightRequest="45" FontSize="13"/>
             </Border>
 
             <!-- SIGN UP BUTTON -->
@@ -98,6 +129,7 @@
                    TextColor="DarkBlue"
                    TextDecorations="Underline"
                    Margin="0,5,0,10"/>
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -1,4 +1,4 @@
-using AplikacijaDonorApp2.Models;
+﻿using AplikacijaDonorApp2.Models;
 using System;
 
 namespace AplikacijaDonorApp2.Views
@@ -29,15 +29,24 @@ namespace AplikacijaDonorApp2.Views
                 string.IsNullOrWhiteSpace(lastNameEntry.Text) ||
                 string.IsNullOrWhiteSpace(emailEntry.Text) ||
                 string.IsNullOrWhiteSpace(passwordEntry.Text) ||
-                string.IsNullOrWhiteSpace(cityEntry.Text) ||
-                string.IsNullOrWhiteSpace(countryEntry.Text) ||
-                string.IsNullOrWhiteSpace(bloodGroupEntry.Text))
+                string.IsNullOrWhiteSpace(locationEntry.Text) ||
+                string.IsNullOrWhiteSpace(bloodGroupEntry.Text) ||
+                string.IsNullOrWhiteSpace(genderEntry.Text) ||
+                string.IsNullOrWhiteSpace(phoneEntry.Text))
             {
                 await DisplayAlert("Error", "Please fill in all fields.", "OK");
                 return;
             }
 
-            // Generi�i Donor kartica ID
+            // Provera da li korisnik već postoji
+            var existingDonor = App.DbContext.Donors.FirstOrDefault(d => d.Email == emailEntry.Text);
+            if (existingDonor != null)
+            {
+                await DisplayAlert("Error", "A donor with this email already exists.", "OK");
+                return;
+            }
+
+            // Generiši Donor karticu ID
             var random = new Random();
             string donorCardId = "DN-" + random.Next(10000, 99999);
 
@@ -47,23 +56,25 @@ namespace AplikacijaDonorApp2.Views
                 FirstName = firstNameEntry.Text,
                 LastName = lastNameEntry.Text,
                 Email = emailEntry.Text,
+                Phone = phoneEntry.Text,
                 Password = passwordEntry.Text,
-                Country = countryEntry.Text,
+                Location = locationEntry.Text,
                 BloodGroup = bloodGroupEntry.Text,
                 LastDonation = DateTime.Now,
-                DonorCardId = donorCardId
+                DonorCardId = donorCardId,
+                Gender = genderEntry.Text,
+                DateOfBirth = dobPicker.Date,
+                // Ispravljeno u skladu s modelom
             };
 
             // Upis u bazu
             App.DbContext.Donors.Add(donor);
             App.DbContext.SaveChanges();
 
-            // ? Postavi aktivnog korisnika
             App.CurrentUser = donor;
 
             await DisplayAlert("Success", "You have successfully signed up!", "OK");
 
-            // Pokreni AppShell (meni + HomePage)
             var window = Application.Current?.Windows.FirstOrDefault();
             if (window is not null)
             {
