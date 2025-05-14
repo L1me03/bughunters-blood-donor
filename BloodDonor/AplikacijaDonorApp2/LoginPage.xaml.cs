@@ -1,4 +1,6 @@
-﻿namespace AplikacijaDonorApp2.Views;
+﻿using AplikacijaDonorApp2.Models;
+
+namespace AplikacijaDonorApp2.Views;
 
 public partial class LoginPage : ContentPage
 {
@@ -23,12 +25,37 @@ public partial class LoginPage : ContentPage
         }
     }
 
-    private void OnLoginClicked(object sender, EventArgs e)
+    private async void OnLoginClicked(object sender, EventArgs e)
     {
-        var window = Application.Current?.Windows.FirstOrDefault();
-        if (window is not null)
+        string email = emailEntry.Text?.Trim();
+        string password = passwordEntry.Text;
+
+        if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
         {
-            window.Page = new AppShell(); // ✅ vraćeno: prikazuje Flyout meni i HomePage
+            await DisplayAlert("Error", "Please enter both email and password.", "OK");
+            return;
+        }
+
+        // Provera u bazi
+        var user = App.DbContext.Donors
+            .FirstOrDefault(d => d.Email == email && d.Password == password);
+
+        if (user != null)
+        {
+            App.CurrentUser = user; // ✅ DODATO
+
+            await DisplayAlert("Welcome", $"Hello {user.FirstName}!", "OK");
+
+            var window = Application.Current?.Windows.FirstOrDefault();
+            if (window is not null)
+            {
+                window.Page = new AppShell(); // Pokreće Shell i omogućava pristup ProfilePage
+            }
+        }
+        else
+        {
+            await DisplayAlert("Login Failed", "Incorrect email or password.", "OK");
         }
     }
+
 }

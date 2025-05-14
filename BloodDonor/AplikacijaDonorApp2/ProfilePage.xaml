@@ -19,23 +19,23 @@
                 <StackLayout Spacing="10">
                     <StackLayout Orientation="Horizontal">
                         <Label Text="👤" FontSize="18"/>
-                        <Label Text="Name: Marko Markovic" FontSize="18"/>
+                        <Label x:Name="NameLabel" Text="Name:" FontSize="18"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="📅" FontSize="18"/>
-                        <Label Text="Date of birth: 12.12.1912" FontSize="18"/>
+                        <Label x:Name="DobLabel" Text="Date of birth:" FontSize="18"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="🩸" FontSize="18"/>
-                        <Label Text="Gender: Male" FontSize="18"/>
+                        <Label x:Name="GenderLabel" Text="Gender:" FontSize="18"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="📞" FontSize="18"/>
-                        <Label Text="Phone: +38766123321" FontSize="18"/>
+                        <Label x:Name="PhoneLabel" Text="Phone:" FontSize="18"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="📧" FontSize="18"/>
-                        <Label Text="E-mail: mm@gmail.com" FontSize="18"/>
+                        <Label x:Name="EmailLabel" Text="E-mail:" FontSize="18"/>
                     </StackLayout>
                 </StackLayout>
             </Frame>
@@ -44,10 +44,28 @@
             <Label Text="Donor status :" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
 
             <StackLayout Spacing="10">
-                <Button Text="Blood type: A+" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
-                <Button Text="Total donation: 25" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
-                <Button Text="Next donation: 20.05.2025" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
-                <Button Text="Certificates/ Badges" BackgroundColor="#B22222" TextColor="White" CornerRadius="20"/>
+                <Button x:Name="BloodTypeButton"
+                        Text="Blood type:"
+                        BackgroundColor="#B22222"
+                        TextColor="White"
+                        CornerRadius="20" />
+
+                <Button x:Name="TotalDonationButton"
+                        Text="Total donation:"
+                        BackgroundColor="#B22222"
+                        TextColor="White"
+                        CornerRadius="20" />
+
+                <Button x:Name="NextDonationButton"
+                        Text="Next donation:"
+                        BackgroundColor="#B22222"
+                        TextColor="White"
+                        CornerRadius="20" />
+
+                <Button Text="Certificates / Badges"
+                        BackgroundColor="#B22222"
+                        TextColor="White"
+                        CornerRadius="20" />
             </StackLayout>
 
         </StackLayout>
