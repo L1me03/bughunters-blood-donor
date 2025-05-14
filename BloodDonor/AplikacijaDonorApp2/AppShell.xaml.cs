@@ -1,4 +1,5 @@
-﻿using AplikacijaDonorApp2.Views;
+﻿using AplikacijaDonorApp2.Models;
+using AplikacijaDonorApp2.Views;
 
 namespace AplikacijaDonorApp2
 {
@@ -7,6 +8,20 @@ namespace AplikacijaDonorApp2
         public AppShell()
         {
             InitializeComponent();
+            LoadUserName();
+        }
+
+        private void LoadUserName()
+        {
+            var user = App.CurrentUser;
+            if (user != null)
+            {
+                UserLabel.Text = $"{user.FirstName} {user.LastName}";
+            }
+            else
+            {
+                UserLabel.Text = "Welcome!";
+            }
         }
 
         private void OnLogoutClicked(object sender, EventArgs e)
@@ -19,4 +34,3 @@ namespace AplikacijaDonorApp2
         }
     }
 }
-
