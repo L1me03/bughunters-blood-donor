@@ -22,7 +22,7 @@
         <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="🗺️ Maps" Route="MapPage">
+    <FlyoutItem Title="🗺️ Map" Route="MapPage">
         <ShellContent ContentTemplate="{DataTemplate views:MapPage}" />
     </FlyoutItem>
 
@@ -33,6 +33,7 @@
     <FlyoutItem Title="🩸 Donate" Route="DonatePage">
         <ShellContent ContentTemplate="{DataTemplate views:DonatePage}" />
     </FlyoutItem>
+
 
     <MenuItem Text="Log out" IconImageSource="logout_icon.png" Clicked="OnLogoutClicked"/>
 </Shell>

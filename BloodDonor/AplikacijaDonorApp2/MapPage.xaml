@@ -1,38 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              x:Class="AplikacijaDonorApp2.Views.MapPage"
+             Title="Donation Map"
              BackgroundColor="#FCA7A7"
              NavigationPage.HasNavigationBar="False">
 
-    <ScrollView>
-        <StackLayout Padding="20" Spacing="15">
-
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-              
-                <Label Text="MAP" FontSize="32" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
-
-         
-            <Label Text="Here you can find or search for the nearest blood donation location."
-                   FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-
-            <Label Text="Locations of the nearest donation centers"
-                   FontSize="14" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-
-            <Frame BackgroundColor="White" CornerRadius="25" Padding="10" HasShadow="True">
-                <StackLayout Orientation="Horizontal">
-                    <Entry Placeholder="Search by location.." PlaceholderColor="Gray"
-                           BackgroundColor="Transparent" />
-                    <Image Source="drop_character.png" HeightRequest="50" WidthRequest="50"/>
-                </StackLayout>
-            </Frame>
-
-            <Image Source="map.jpeg"
-               Aspect="AspectFill"
-               HeightRequest="350"
-               HorizontalOptions="Fill" />
-
-        </StackLayout>
-    </ScrollView>
+    <maps:Map x:Name="donorMap"
+              MapType="Street"
+              IsShowingUser="False"
+              HeightRequest="500"
+              WidthRequest="400" />
 </ContentPage>
+
