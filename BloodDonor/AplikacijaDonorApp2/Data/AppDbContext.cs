@@ -16,11 +16,12 @@ namespace AplikacijaDonorApp2.Data
             var folder = FileSystem.AppDataDirectory;
             _dbPath = Path.Combine(folder, "donors.db");
 
+            /*
             if (File.Exists(_dbPath))
             {
                 File.Delete(_dbPath);
             }
-            
+            */
 
             Database.EnsureCreated();
         }
