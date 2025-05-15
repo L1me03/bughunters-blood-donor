@@ -8,27 +8,20 @@
     <ScrollView>
         <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
 
-            
+
 
             <Label Text="Enter your information to make a donation:"
                    FontSize="16" HorizontalTextAlignment="Center" />
 
-            
             <Frame CornerRadius="25" Padding="10" BackgroundColor="White" HasShadow="False">
-                <Entry Placeholder="First Name:" BackgroundColor="Transparent"/>
+                <Entry x:Name="locationEntry" Placeholder="Location" />
             </Frame>
 
-            
             <Frame CornerRadius="25" Padding="10" BackgroundColor="White" HasShadow="False">
-                <Entry Placeholder="Last name:" BackgroundColor="Transparent"/>
+                <Entry x:Name="hospitalEntry" Placeholder="Enter the hospital:" BackgroundColor="Transparent"/>
             </Frame>
-
             
-            <Frame CornerRadius="25" Padding="10" BackgroundColor="White" HasShadow="False">
-                <Entry Placeholder="Enter the hospital:" BackgroundColor="Transparent"/>
-            </Frame>
-
-            
+            <!-- Date -->
             <Frame CornerRadius="25" Padding="10" BackgroundColor="White" HasShadow="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -36,9 +29,11 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <Entry Placeholder="DD/MM/YY"
-                           BackgroundColor="Transparent"
-                           Grid.Column="0"/>
+                    <DatePicker x:Name="donationDatePicker"
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                Format="dd/MM/yyyy" />
+
                     <Label Text="📅"
                            FontSize="18"
                            VerticalOptions="Center"
@@ -47,11 +42,17 @@
                 </Grid>
             </Frame>
 
+
+            <Frame CornerRadius="25" Padding="10" BackgroundColor="White" HasShadow="False">
+                <Editor x:Name="notesEditor" Placeholder="Notes" AutoSize="TextChanges"/>
+            </Frame>
+
             <!-- Drop character image -->
             <Image Source="drop_character.png" HeightRequest="80" HorizontalOptions="Center"/>
 
             <!-- Confirm button -->
-            <Button Text="CONFIRM"
+            <Button Text="Confirm"
+                    Clicked="OnConfirmClicked"
                     BackgroundColor="#B22222"
                     TextColor="White"
                     FontAttributes="Bold"

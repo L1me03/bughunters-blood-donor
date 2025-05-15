@@ -1,9 +1,49 @@
-namespace AplikacijaDonorApp2.Views;
+﻿using AplikacijaDonorApp2.Data;
+using System;
 
-public partial class DonatePage : ContentPage
+namespace AplikacijaDonorApp2.Views
 {
-    public DonatePage()
+    public partial class DonatePage : ContentPage
     {
-        InitializeComponent();
+        public DonatePage()
+        {
+            InitializeComponent();
+        }
+
+        private async void OnConfirmClicked(object sender, EventArgs e)
+        {
+            var user = App.CurrentUser;
+            if (user == null)
+            {
+                await DisplayAlert("Error", "No user is logged in.", "OK");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(locationEntry.Text) ||
+                string.IsNullOrWhiteSpace(hospitalEntry.Text))
+            {
+                await DisplayAlert("Validation", "Please enter location and hospital.", "OK");
+                return;
+            }
+
+            var donation = new Donation
+            {
+                DonorId = user.Id,
+                DonationDate = donationDatePicker.Date,
+                Location = locationEntry.Text,
+                Hospital = hospitalEntry.Text,
+                Notes = notesEditor.Text 
+            };
+
+            App.DbContext.Donations.Add(donation);
+            App.DbContext.SaveChanges();
+
+            await DisplayAlert("Success", "Donation successfully recorded!", "OK");
+
+            locationEntry.Text = "";
+            hospitalEntry.Text = "";
+            notesEditor.Text = "";
+            donationDatePicker.Date = DateTime.Today;
+        }
     }
 }
