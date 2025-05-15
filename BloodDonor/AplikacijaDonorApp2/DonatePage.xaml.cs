@@ -1,4 +1,5 @@
 ﻿using AplikacijaDonorApp2.Data;
+using AplikacijaDonorApp2.Models;
 using System;
 
 namespace AplikacijaDonorApp2.Views
@@ -32,18 +33,26 @@ namespace AplikacijaDonorApp2.Views
                 DonationDate = donationDatePicker.Date,
                 Location = locationEntry.Text,
                 Hospital = hospitalEntry.Text,
-                Notes = notesEditor.Text 
+                Notes = notesEditor.Text
             };
 
-            App.DbContext.Donations.Add(donation);
-            App.DbContext.SaveChanges();
+            try
+            {
+                App.DbContext.Donations.Add(donation);
+                App.DbContext.SaveChanges();
 
-            await DisplayAlert("Success", "Donation successfully recorded!", "OK");
+                await DisplayAlert("Success", "Donation successfully recorded!", "OK");
 
-            locationEntry.Text = "";
-            hospitalEntry.Text = "";
-            notesEditor.Text = "";
-            donationDatePicker.Date = DateTime.Today;
+                locationEntry.Text = "";
+                hospitalEntry.Text = "";
+                notesEditor.Text = "";
+                donationDatePicker.Date = DateTime.Today;
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("DB Error", ex.InnerException?.Message ?? ex.Message, "OK");
+            }
         }
+
     }
 }

@@ -7,7 +7,7 @@ namespace AplikacijaDonorApp2.Data
     public class AppDbContext : DbContext
     {
         public DbSet<Donor> Donors { get; set; }
-        public DbSet<Donation> Donations { get; set; }  
+        public DbSet<Donation> Donations { get; set; } // ✅ dodato
 
         private string _dbPath;
 
@@ -16,13 +16,11 @@ namespace AplikacijaDonorApp2.Data
             var folder = FileSystem.AppDataDirectory;
             _dbPath = Path.Combine(folder, "donors.db");
 
-            // Kod za brisanje prethodne baze
-            /*
             if (File.Exists(_dbPath))
             {
                 File.Delete(_dbPath);
             }
-            */
+            
 
             Database.EnsureCreated();
         }

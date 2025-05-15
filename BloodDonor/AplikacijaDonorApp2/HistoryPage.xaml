@@ -10,42 +10,57 @@
 
             <!-- Naslov i Home emoji -->
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                
                 <Label Text="HISTORY" FontSize="30" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
 
             <!-- Opšti status -->
             <Frame BackgroundColor="White" CornerRadius="20" Padding="15" HasShadow="True">
                 <StackLayout Spacing="10">
-                    <Label Text="🩸 Total donation:" FontSize="16"/>
-                    <Label Text="📅 Last donation:" FontSize="16"/>
-                    <Label Text="⏰ Next donation date:" FontSize="16"/>
+                    <Label x:Name="totalDonationsLabel" Text="🩸 Total donation:" FontSize="16"/>
+                    <Label x:Name="lastDonationLabel" Text="📅 Last donation:" FontSize="16"/>
+                    <Label x:Name="nextDonationLabel" Text="⏰ Next donation date:" FontSize="16"/>
                 </StackLayout>
             </Frame>
 
-            <!-- Zabeležena donacija 1 -->
+            <!-- Prva donacija (primer) -->
             <Frame BackgroundColor="White" CornerRadius="20" Padding="15" HasShadow="True">
                 <StackLayout Spacing="10">
-                    <Label Text="📅 Date of donation:" FontSize="16"/>
-                    <Label Text="📍 Location:" FontSize="16"/>
-                    <Label Text="🩸 Form of blood donation:" FontSize="16"/>
-                    <Label Text="☑️ Donation status:" FontSize="16"/>
+                    <Label x:Name="date1Label" Text="📅 Date of donation:" FontSize="16"/>
+                    <Label x:Name="hospital1Label" Text="🏥 Hospital:" FontSize="16"/>
+                    <Label x:Name="location1Label" Text="📍 Location:" FontSize="16"/>
+                    <Label x:Name="form1Label" Text="🩸 Form of blood donation:" FontSize="16"/>
+                    <Label x:Name="status1Label" Text="☑️ Donation status:" FontSize="16"/>
                 </StackLayout>
             </Frame>
 
-            <!-- Zabeležena donacija 2 -->
+            <!-- Druga donacija (primer) -->
             <Frame BackgroundColor="White" CornerRadius="20" Padding="15" HasShadow="True">
                 <StackLayout Spacing="10">
-                    <Label Text="📅 Date of donation:" FontSize="16"/>
-                    <Label Text="📍 Location:" FontSize="16"/>
-                    <Label Text="🩸 Form of blood donation:" FontSize="16"/>
-                    <Label Text="☑️ Donation status:" FontSize="16"/>
+                    <Label x:Name="date2Label" Text="📅 Date of donation:" FontSize="16"/>
+                    <Label x:Name="hospital2Label" Text="🏥 Hospital:" FontSize="16"/>
+                    <Label x:Name="location2Label" Text="📍 Location:" FontSize="16"/>
+                    <Label x:Name="form2Label" Text="🩸 Form of blood donation:" FontSize="16"/>
+                    <Label x:Name="status2Label" Text="☑️ Donation status:" FontSize="16"/>
                 </StackLayout>
             </Frame>
 
+            <!-- Dugme za prikaz svih -->
+            <Button Text="Prikaži sve"
+                Clicked="OnShowAllClicked"
+                BackgroundColor="DarkRed"
+                TextColor="White"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                HeightRequest="50"/>
+
+            <!-- Horizontalni prikaz svih donacija -->
+            <ScrollView Orientation="Horizontal" x:Name="allDonationsScrollView" IsVisible="False">
+                <StackLayout x:Name="allDonationsPanel" Orientation="Horizontal" Spacing="10" />
+            </ScrollView>
+            
             <!-- Footer -->
             <Label Text="BugHunters ©" FontSize="12" HorizontalOptions="Center" TextColor="Black"/>
-
         </StackLayout>
     </ScrollView>
 </ContentPage>
+

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using AplikacijaDonorApp2.Models;
 
 namespace AplikacijaDonorApp2.Models
 {
@@ -35,10 +36,11 @@ namespace AplikacijaDonorApp2.Models
 
         [Required]
         [MaxLength(20)]
-        public string? DonorCardId { get; set; } // npr. "DN-****"
+        public string? DonorCardId { get; set; } 
         public string? Gender { get; set; }
         public DateTime? DateOfBirth { get; set; }
 
         public int TotalDonations { get; set; } = 0;
+
     }
 }
