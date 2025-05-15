@@ -7,7 +7,7 @@ namespace AplikacijaDonorApp2.Data
     public class AppDbContext : DbContext
     {
         public DbSet<Donor> Donors { get; set; }
-        public DbSet<Donation> Donations { get; set; } // ✅ dodato
+        public DbSet<Donation> Donations { get; set; } 
 
         private string _dbPath;
 
